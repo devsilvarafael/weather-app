@@ -36,7 +36,6 @@ class WeatherController extends GetxController {
         print('Error fetching city coordinates');
       }
     } catch (e) {
-      // Handle exception
       print('Exception: $e');
     }
   }
@@ -64,7 +63,6 @@ class WeatherController extends GetxController {
         print('Error fetching weather data');
       }
     } catch (e) {
-      // Handle exception
       print('Exception: $e');
     }
   }
