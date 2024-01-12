@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tasks_flutter/controllers/weather_controller.dart';
+import 'package:tasks_flutter/widgets/appbar_title.dart';
 
 class WeatherDisplayPage extends StatelessWidget {
   const WeatherDisplayPage({super.key});
@@ -10,13 +11,16 @@ class WeatherDisplayPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Consultar Clima',
-          style: TextStyle(color: Colors.white),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.blue,
-      ),
+          title: const AppBarTitle(text: "Resultado", onTap: null),
+          centerTitle: true,
+          backgroundColor: Colors.blue,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back),
+            color: Colors.white,
+            onPressed: () {
+              Get.back();
+            },
+          )),
       body: Center(
         child: Obx(
           () {

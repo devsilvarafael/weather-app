@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 import 'package:tasks_flutter/controllers/weather_controller.dart';
+import 'package:tasks_flutter/widgets/appbar_title.dart';
+import 'package:tasks_flutter/core/app_export.dart';
 
 class LocationInputPage extends StatelessWidget {
   final TextEditingController cityController = TextEditingController();
@@ -20,10 +22,7 @@ class LocationInputPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Consultar Clima',
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const AppBarTitle(text: "Bem-vindo", onTap: null),
         centerTitle: true,
         backgroundColor: Colors.blue,
       ),
@@ -46,13 +45,8 @@ class LocationInputPage extends StatelessWidget {
                 color: Colors.white,
               ),
               const SizedBox(height: 20),
-              const Text(
-                'Digite o nome da cidade',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
-              ),
+              Text('Digite o nome da cidade',
+                  style: TitleTextStyle.getTitleTextStyle()),
               const SizedBox(height: 10),
               TextField(
                 controller: cityController,
@@ -71,14 +65,11 @@ class LocationInputPage extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: submitLocation,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  foregroundColor: Colors.blue,
-                ),
+                style: WeatherButtonStyle.primaryButtonStyle(context),
                 child: const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   child: Text(
-                    'Verificar clima',
+                    'VERIFICAR CLIMA',
                     style: TextStyle(fontSize: 18),
                   ),
                 ),

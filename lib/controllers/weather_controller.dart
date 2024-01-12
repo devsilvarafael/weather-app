@@ -12,8 +12,6 @@ class WeatherController extends GetxController {
   }
 
   Future<void> fetchWeather(String cityName) async {
-    print("WE ARE HERE");
-
     const apiKey = '1986ebee6148be5e3abe04c7e3b30b69';
     final geoApiUrl =
         'https://api.openweathermap.org/geo/1.0/direct?q=$cityName&limit=1&appid=$apiKey';
